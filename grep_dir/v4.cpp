@@ -11,6 +11,7 @@ bool myFind(string line, string query){
             for(int j=1;query[j]!='\0'&&line[i+j]!='\0';j++){
                 comp++;
                 if(query[j]!=line[i+j]){
+                    i=i+j;
                     break;
                 }
                 else if(j==query.length()-1){
