@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<vector>
 
 using namespace std;
 int comp = 0;
@@ -46,6 +47,7 @@ while(i<n){//iterator < length
     }
     if(j==m){
         cout<<"found the pattern at index:"<<i-1<<"\n here's the line:'"<<line<<"'\n";
+        j=lps[j-1];
     }
     else{
         if (i<n && pattern[j]!=line[i]){
@@ -53,11 +55,8 @@ while(i<n){//iterator < length
                 j=lps[j-1];
             }   
             else{
-                i=1+1;
+                i=i+1;
             }
-        }
-        else{
-            i=i+1;
         }
     }
 }
